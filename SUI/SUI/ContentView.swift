@@ -12,14 +12,14 @@ struct ContentView: View {
         VStack{
             Image("cat")
                 .resizable()
-                .scaleEffect(1.2)
-                .frame(width: 240, height: 240) // В итоге будет 400х400
-                .border(.red, width: 3)
+                .frame(width: 200, height: 200)
+                .rotationEffect(.degrees(45)) // Поворот на 45 градусов
+                .border(.red)
             Image("cat")
                 .resizable()
-                .scaleEffect(x: 0.5, y:0.5, anchor: .bottomLeading) // Масштабирует изображение и перемещает в заданое направление. 
-                .frame(width: 240, height: 240)
-                .border(.red, width: 3)
+                .frame(width: 200, height: 200)
+                .rotationEffect(.degrees(45), anchor: .topLeading) // Поворот на 45 градусов относительно этой точки.
+                .border(.red)
         }
     }
 }
