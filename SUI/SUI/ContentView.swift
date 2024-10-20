@@ -13,10 +13,7 @@ struct ContentView: View {
             Image("cat")
                 .resizable()
                 .frame(width: 200, height: 200)
-                .rotation3DEffect(
-                    .degrees(45),
-                    axis: (x:0, y:1, z:0) // Ось вращения (в данном случае, вокруг оси Y)
-                )
+                .transformEffect(CGAffineTransform(rotationAngle: -45 * (.pi / 180))) // Применяет вращение
                 .border(.red)
         }
     }
