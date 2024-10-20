@@ -12,19 +12,14 @@ struct ContentView: View {
         VStack{
             Image("cat")
                 .resizable()
-                .aspectRatio(CGSize(width: 3, height: 4), contentMode: .fill) // Заполняет фрейм, возможно, обрезая изображение
-                .frame(width: 200, height: 200)
-                .border(Color.red, width: 3)
+                .scaleEffect(1.2)
+                .frame(width: 240, height: 240) // В итоге будет 400х400
+                .border(.red, width: 3)
             Image("cat")
                 .resizable()
-                .aspectRatio(contentMode: .fit) // Изображение сохраняет свои пропорции и вписывается в фрейм, не обрезая его. Это означает, что оно будет уменьшено или увеличено, чтобы полностью поместиться в заданные размеры.
-                .frame(width: 200, height: 200)
-                .border(Color.red, width: 3)
-            Image("cat")
-                .resizable()
-                .aspectRatio(0.25, contentMode: .fit) // Здесь задано конкретное соотношение сторон (ширина/высота = 0.25). Изображение будет вписываться в фрейм, сохраняя это соотношение.
-                .frame(width: 200, height: 200)
-                .border(Color.red, width: 3)
+                .scaleEffect(x: 0.5, y:0.5, anchor: .bottomLeading) // Масштабирует изображение и перемещает в заданое направление. 
+                .frame(width: 240, height: 240)
+                .border(.red, width: 3)
         }
     }
 }
