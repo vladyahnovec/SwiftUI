@@ -13,12 +13,10 @@ struct ContentView: View {
             Image("cat")
                 .resizable()
                 .frame(width: 200, height: 200)
-                .rotationEffect(.degrees(45)) // Поворот на 45 градусов
-                .border(.red)
-            Image("cat")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .rotationEffect(.degrees(45), anchor: .topLeading) // Поворот на 45 градусов относительно этой точки.
+                .rotation3DEffect(
+                    .degrees(45),
+                    axis: (x:0, y:1, z:0) // Ось вращения (в данном случае, вокруг оси Y)
+                )
                 .border(.red)
         }
     }
