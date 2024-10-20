@@ -13,7 +13,8 @@ struct ContentView: View {
             Image("cat")
                 .resizable()
                 .frame(width: 200, height: 200)
-                .transformEffect(CGAffineTransform(rotationAngle: -45 * (.pi / 180))) // Применяет вращение
+                .projectionEffect(.init(CATransform3DMakeRotation(
+                    -30 * (.pi / 180), 0.0, 0.0, 1.0))) // // Это преобразование представляет собой поворот на 30˚ вокруг оси z.
                 .border(.red)
         }
     }
