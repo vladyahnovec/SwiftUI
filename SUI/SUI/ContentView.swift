@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            Image("cat")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .projectionEffect(.init(CATransform3DMakeRotation(
-                    -30 * (.pi / 180), 0.0, 0.0, 1.0))) // // Это преобразование представляет собой поворот на 30˚ вокруг оси z.
-                .border(.red)
-        }
+        Text("Фиолетовая рамка.")
+            .border(Color.purple, width: 4)
+        Text("Фиолетовая рамка + отступы.")
+            .padding(10)
+            .border(Color.purple, width: 4)
+        Text("Фиолетовая рамка + отступы.")
+            .border(Color.purple, width: 4)
+            .padding(10)
+            .border(Color.purple, width: 4)
     }
 }
 
