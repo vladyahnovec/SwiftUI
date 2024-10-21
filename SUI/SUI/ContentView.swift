@@ -10,12 +10,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            HStack {
-                Text("Hi!")
+            ForEach(0..<5) { item in
+                HStack {
+                    Text("Hi!")
+                }
+                .frame(width: 100, height: 100)
+                .background(.red)
+                .saturation(Double(item) * 0.2)
             }
-            .frame(width: 100, height: 100)
-            .background(.red)
-            .colorMultiply(.blue) // Умножение цветов
         }
     }
 }
