@@ -11,17 +11,19 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ZStack {
-                Text("CompositingGroup")
+                Text("DrawingGroup")
                     .foregroundColor(.black)
                     .padding(20)
                     .background(Color.red)
-                Text("CompositingGroup")
+                Text("DrawingGroup")
                     .blur(radius: 2)
             }
             .font(.largeTitle)
-            .compositingGroup() // объединили несколько слоёв  и обрабатываем их как единое целое, что может улучшить производительность рендеринга
-            .opacity(0.9)
+            .compositingGroup()
+            .opacity(1.0)
         }
+         .background(Color.white)
+         .drawingGroup() // объединяется в единое растровое изображение; затем растровое изображение отображается вместо представления
     }
 }
 
