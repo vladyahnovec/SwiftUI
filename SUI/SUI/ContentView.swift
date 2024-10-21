@@ -10,13 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "swift")
-                .padding()
-                .background(in: Circle())
-                .backgroundStyle(.blue.gradient)
-            HStack {}
-                .frame(width: 100, height: 100)
-                .background(.red)
+            ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                HStack {
+                    Text("Hi!")            }
+                    .frame(width: 100, height: 100)
+                    .background(.red)
+                    .brightness(Double(item) * 0.2) // яркость элемента
+            }
         }
     }
 }
