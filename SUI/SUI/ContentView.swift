@@ -13,23 +13,44 @@ struct ContentView: View {
     @State var b = true
     @State var value = 0.0
     var body: some View {
-        VStack() {
-            Text("Test")
-                .font(.title)
-            Image("cat")
-                .resizable()
-                .frame(width: 100, height: 100)
-            TextField("Enter your name", text: $name)
-            SecureField("Password", text: $name)
-            Toggle("Enable notifications", isOn: $b)
-            Slider(value: $value, in: 0...100)
-            Stepper("Value: \(value)", value: $value, in: 0...100)
-            List(["1", "2", "3"], id: \.self) { item in
-                Text(item)
+        VStack {
+            Form {
+                TextField("Name", text: $name)
+                Toggle("True?", isOn: $b)
             }
-            TabView {
-                Text("Tab 1").tabItem { Text("First") }
-                Text("Tab 2").tabItem { Text("Second") }
+            ScrollView {
+                VStack(spacing: 20) {
+                    ForEach(1..<101) { index in
+                        Text("Item \(index)")
+                            .font(.headline)
+                            .padding()
+                            .background(Color.blue.opacity(0.2))
+                            .cornerRadius(8)
+                    }
+                }
+                .padding()
+            }
+            Group {
+                Text("Item 1")
+                Text("Item 2")
+                Text("Item 3")
+                Text("Item 4")
+                Text("Item 5")
+            }
+            ZStack {
+                Image("cat")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                Text("Overlay")
+                    .foregroundStyle(.white)
+            }
+            HStack {
+                Text("Left")
+                Text("Right")
+            }
+            VStack {
+                Text("Item 1")
+                Text("Item 2")
             }
         }
     }
