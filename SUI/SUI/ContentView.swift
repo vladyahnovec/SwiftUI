@@ -8,28 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    let steps = [0, 5, 10]
     var body: some View {
-        VStack(spacing: 50) {
-            ForEach(steps, id: \.self) { offset in
-                HStack(spacing: 50) {
-                    ForEach(steps, id: \.self) { radius in
-                        Color.blue
-                            .shadow(
-                                color: .primary,
-                                radius: CGFloat(radius),
-                                x: CGFloat(offset), y: CGFloat(offset))
-                            .overlay {
-                                VStack {
-                                    Text("\(radius)")
-                                    Text("(\(offset), \(offset))")
-                                }
-                            }
-                    }
-                }
-            }
+        HStack {
+            Color.yellow.frame(width: 50, height: 50, alignment: .center)
+
+            Color.red.frame(width: 50, height: 50, alignment: .center)
+                .rotationEffect(.degrees(45))
+                .padding(-20)
+                .blendMode(.color) // Перекрывание
         }
-        .frame(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 100)
     }
 }
 
