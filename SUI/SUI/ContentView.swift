@@ -7,23 +7,31 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
         VStack {
-            ZStack {
-                Text("DrawingGroup")
-                    .foregroundColor(.black)
-                    .padding(20)
-                    .background(Color.red)
-                Text("DrawingGroup")
-                    .blur(radius: 2)
+            Button(action: {}) {
+                Text("Press")
             }
-            .font(.largeTitle)
-            .compositingGroup()
-            .opacity(1.0)
+            .buttonStyle(.automatic)
+            Button(action: {}) {
+                Text("Press")
+            }
+            .buttonStyle(.bordered)
+            Button(action: {}) {
+                Text("Press")
+            }
+            .buttonStyle(.plain)
+            Button(action: {}) {
+                Text("Press")
+            }
+            .buttonStyle(.borderless)
+            Button(action: {}) {
+                Text("Press")
+            }
+            .buttonStyle(.borderedProminent)
         }
-         .background(Color.white)
-         .drawingGroup() // объединяется в единое растровое изображение; затем растровое изображение отображается вместо представления
     }
 }
 
