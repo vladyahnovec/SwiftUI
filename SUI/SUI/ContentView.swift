@@ -9,51 +9,28 @@ import SwiftUI
 
 
 struct ContentView: View {
-    
-    enum Flavor: String, CaseIterable, Identifiable {
-        case chocolate, vanilla, strawberry
-        var id: Self { self }
-    }
-
-
-    @State private var selectedFlavor: Flavor = .chocolate
-    
+    @State var name = ""
+    @State var b = true
+    @State var value = 0.0
     var body: some View {
-        List {
-            Picker("Flavor", selection: $selectedFlavor) {
-                Text("Chocolate").tag(Flavor.chocolate)
-                Text("Vanilla").tag(Flavor.vanilla)
-                Text("Strawberry").tag(Flavor.strawberry)
+        VStack() {
+            Text("Test")
+                .font(.title)
+            Image("cat")
+                .resizable()
+                .frame(width: 100, height: 100)
+            TextField("Enter your name", text: $name)
+            SecureField("Password", text: $name)
+            Toggle("Enable notifications", isOn: $b)
+            Slider(value: $value, in: 0...100)
+            Stepper("Value: \(value)", value: $value, in: 0...100)
+            List(["1", "2", "3"], id: \.self) { item in
+                Text(item)
             }
-            
-            Picker("Flavor", selection: $selectedFlavor) {
-                Text("Chocolate").tag(Flavor.chocolate)
-                Text("Vanilla").tag(Flavor.vanilla)
-                Text("Strawberry").tag(Flavor.strawberry)
+            TabView {
+                Text("Tab 1").tabItem { Text("First") }
+                Text("Tab 2").tabItem { Text("Second") }
             }
-            .pickerStyle(.segmented)
-            
-            Picker("Flavor", selection: $selectedFlavor) {
-                Text("Chocolate").tag(Flavor.chocolate)
-                Text("Vanilla").tag(Flavor.vanilla)
-                Text("Strawberry").tag(Flavor.strawberry)
-            }
-            .pickerStyle(.inline)
-            
-            Picker("Flavor", selection: $selectedFlavor) {
-                Text("Chocolate").tag(Flavor.chocolate)
-                Text("Vanilla").tag(Flavor.vanilla)
-                Text("Strawberry").tag(Flavor.strawberry)
-            }
-            .pickerStyle(.menu)
-            
-            Picker("Flavor", selection: $selectedFlavor) {
-                Text("Chocolate").tag(Flavor.chocolate)
-                Text("Vanilla").tag(Flavor.vanilla)
-                Text("Strawberry").tag(Flavor.strawberry)
-            }
-            .pickerStyle(.wheel)
-            
         }
     }
 }
