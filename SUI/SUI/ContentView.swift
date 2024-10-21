@@ -10,11 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("123456789abcdefgtrewasdf")
-                .fixedSize()
-                .frame(width: 300, height: 300)
-                .background(.red)
-                .clipShape(Circle()) // скрывает любое содержимое, выходящее за границы макета фигуры.
+            Text("1234567")
+                .padding()
+            Text("1234567")
+                .blur(radius: 3.0, opaque: false) // прозрачное размытие по Гауссу,opaque: true - не прозрачное
         }
     }
 }
