@@ -9,13 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            Color.yellow.frame(width: 50, height: 50, alignment: .center)
-
-            Color.red.frame(width: 50, height: 50, alignment: .center)
-                .rotationEffect(.degrees(45))
-                .padding(-20)
-                .blendMode(.color) // Перекрывание
+        VStack {
+            ZStack {
+                Text("CompositingGroup")
+                    .foregroundColor(.black)
+                    .padding(20)
+                    .background(Color.red)
+                Text("CompositingGroup")
+                    .blur(radius: 2)
+            }
+            .font(.largeTitle)
+            .compositingGroup() // объединили несколько слоёв  и обрабатываем их как единое целое, что может улучшить производительность рендеринга
+            .opacity(0.9)
         }
     }
 }
