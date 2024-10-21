@@ -15,7 +15,7 @@ struct ContentView: View {
             }
             .frame(width: 100, height: 100)
             .background(.red)
-            .colorInvert() // инвертирует цвет
+            .colorMultiply(.blue) // Умножение цветов
         }
     }
 }
