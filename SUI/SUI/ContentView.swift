@@ -11,12 +11,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ForEach(0..<5) { item in
-                HStack {
-                    Text("Hi!")
-                }
-                .frame(width: 100, height: 100)
-                .background(.red)
-                .grayscale(Double(item) * 0.2) // Добавляет серый цвет в основной
+                Rectangle()
+                    .fill(.linearGradient(colors: [.red, .green, .yellow], startPoint: .top, endPoint: .bottom))
+                    .frame(width: 100, height: 100)
+                    .hueRotation(.degrees(Double(item) * 36)) // изменение цветового тона
             }
         }
     }
