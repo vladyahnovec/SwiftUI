@@ -12,9 +12,8 @@ struct ContentView: View {
         VStack {
             Text("1234567")
                 .padding()
-            Text("1234567")
-                .blur(radius: 3.0, opaque: false) // прозрачное размытие по Гауссу,opaque: true - не прозрачное
         }
+        .shadow(color: .red, radius: 10, x: 3, y: 3) // Добавляем тень к объекту
     }
 }
 
