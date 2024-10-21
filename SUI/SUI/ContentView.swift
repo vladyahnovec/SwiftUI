@@ -9,28 +9,51 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
+    enum Flavor: String, CaseIterable, Identifiable {
+        case chocolate, vanilla, strawberry
+        var id: Self { self }
+    }
+
+
+    @State private var selectedFlavor: Flavor = .chocolate
+    
     var body: some View {
-        VStack {
-            Button(action: {}) {
-                Text("Press")
+        List {
+            Picker("Flavor", selection: $selectedFlavor) {
+                Text("Chocolate").tag(Flavor.chocolate)
+                Text("Vanilla").tag(Flavor.vanilla)
+                Text("Strawberry").tag(Flavor.strawberry)
             }
-            .buttonStyle(.automatic)
-            Button(action: {}) {
-                Text("Press")
+            
+            Picker("Flavor", selection: $selectedFlavor) {
+                Text("Chocolate").tag(Flavor.chocolate)
+                Text("Vanilla").tag(Flavor.vanilla)
+                Text("Strawberry").tag(Flavor.strawberry)
             }
-            .buttonStyle(.bordered)
-            Button(action: {}) {
-                Text("Press")
+            .pickerStyle(.segmented)
+            
+            Picker("Flavor", selection: $selectedFlavor) {
+                Text("Chocolate").tag(Flavor.chocolate)
+                Text("Vanilla").tag(Flavor.vanilla)
+                Text("Strawberry").tag(Flavor.strawberry)
             }
-            .buttonStyle(.plain)
-            Button(action: {}) {
-                Text("Press")
+            .pickerStyle(.inline)
+            
+            Picker("Flavor", selection: $selectedFlavor) {
+                Text("Chocolate").tag(Flavor.chocolate)
+                Text("Vanilla").tag(Flavor.vanilla)
+                Text("Strawberry").tag(Flavor.strawberry)
             }
-            .buttonStyle(.borderless)
-            Button(action: {}) {
-                Text("Press")
+            .pickerStyle(.menu)
+            
+            Picker("Flavor", selection: $selectedFlavor) {
+                Text("Chocolate").tag(Flavor.chocolate)
+                Text("Vanilla").tag(Flavor.vanilla)
+                Text("Strawberry").tag(Flavor.strawberry)
             }
-            .buttonStyle(.borderedProminent)
+            .pickerStyle(.wheel)
+            
         }
     }
 }
