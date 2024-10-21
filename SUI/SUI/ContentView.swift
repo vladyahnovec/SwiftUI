@@ -16,7 +16,7 @@ struct ContentView: View {
                 }
                 .frame(width: 100, height: 100)
                 .background(.red)
-                .saturation(Double(item) * 0.2)
+                .grayscale(Double(item) * 0.2) // Добавляет серый цвет в основной
             }
         }
     }
