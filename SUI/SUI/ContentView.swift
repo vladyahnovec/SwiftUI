@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            ForEach(0..<5) { item in
-                Rectangle()
-                    .fill(.linearGradient(colors: [.red, .green, .yellow], startPoint: .top, endPoint: .bottom))
-                    .frame(width: 100, height: 100)
-                    .hueRotation(.degrees(Double(item) * 36)) // изменение цветового тона
-            }
+            Image(systemName: "envelope.badge.fill")
+                .foregroundColor(Color.blue)
+                .font(.system(size: 128, weight: .regular))
+                .mask {
+                    Circle().opacity(0.2)
+                } // Накладываем один объект на другой
         }
     }
 }
