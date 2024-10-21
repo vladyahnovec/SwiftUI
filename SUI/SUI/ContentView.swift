@@ -10,12 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "envelope.badge.fill")
-                .foregroundColor(Color.blue)
-                .font(.system(size: 128, weight: .regular))
-                .mask {
-                    Circle().opacity(0.2)
-                } // Накладываем один объект на другой
+            Text("123456789abcdefgtrewasdf")
+                .fixedSize()
+                .frame(width: 200, height: 100)
+                .clipped() // скрывает любое содержимое, выходящее за границы макета фигуры.
+            
+
         }
     }
 }
