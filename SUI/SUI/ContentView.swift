@@ -8,12 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    let steps = [0, 5, 10]
     var body: some View {
-        VStack {
-            Text("1234567")
-                .padding()
+        VStack(spacing: 50) {
+            ForEach(steps, id: \.self) { offset in
+                HStack(spacing: 50) {
+                    ForEach(steps, id: \.self) { radius in
+                        Color.blue
+                            .shadow(
+                                color: .primary,
+                                radius: CGFloat(radius),
+                                x: CGFloat(offset), y: CGFloat(offset))
+                            .overlay {
+                                VStack {
+                                    Text("\(radius)")
+                                    Text("(\(offset), \(offset))")
+                                }
+                            }
+                    }
+                }
+            }
         }
-        .shadow(color: .red, radius: 10, x: 3, y: 3) // Добавляем тень к объекту
+        .frame(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 100)
     }
 }
 
