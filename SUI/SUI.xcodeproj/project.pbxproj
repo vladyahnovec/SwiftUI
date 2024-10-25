@@ -31,6 +31,7 @@
 		F4F988CF2CC711C500B88F2B /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F988CE2CC711C500B88F2B /* LandmarkRow.swift */; };
 		F4F988D12CC7120200B88F2B /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F988D02CC7120200B88F2B /* LandmarkList.swift */; };
 		F4F988D32CC7124F00B88F2B /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F988D22CC7124F00B88F2B /* LandmarkDetail.swift */; };
+		F4F988D52CCBC5C600B88F2B /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F988D42CCBC5C600B88F2B /* FavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		F4F988CE2CC711C500B88F2B /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		F4F988D02CC7120200B88F2B /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		F4F988D22CC7124F00B88F2B /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		F4F988D42CCBC5C600B88F2B /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F4F988CE2CC711C500B88F2B /* LandmarkRow.swift */,
 				F4F988D02CC7120200B88F2B /* LandmarkList.swift */,
 				F4F988D22CC7124F00B88F2B /* LandmarkDetail.swift */,
+				F4F988D42CCBC5C600B88F2B /* FavoriteButton.swift */,
 			);
 			path = SUI;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				F4F9889E2CC5A7DA00B88F2B /* ContentView.swift in Sources */,
 				F4F988AC2CC70F5800B88F2B /* MapView.swift in Sources */,
 				F4F9889C2CC5A7DA00B88F2B /* SUIApp.swift in Sources */,
+				F4F988D52CCBC5C600B88F2B /* FavoriteButton.swift in Sources */,
 				F4F988D12CC7120200B88F2B /* LandmarkList.swift in Sources */,
 				F4F988D32CC7124F00B88F2B /* LandmarkDetail.swift in Sources */,
 				F4F988AA2CC70EE200B88F2B /* CircleImage.swift in Sources */,
